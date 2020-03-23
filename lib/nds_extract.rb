@@ -68,6 +68,8 @@ def gross_per_studio(collection)
    studio_name = collection[array][:studio]
     if hash[studio_name]
       hash[studio_name] += collection[array][:worldwide_gross]
+    else hash[studio_name]= collection[array][:studio]
+      array+=1
   end
   hash
   end
@@ -91,12 +93,12 @@ end
 
 def movies_with_directors_set(source)
   director_index = 0
-  movie = []
-  while array < source.length do
-    movie.push( movies_with_director_key(source[array][:name], source[array][:movies]))
-    array += 1
+  movie_array = []
+  while director_index < source.length do
+    movie_array << movies_with_director_key(source[director_index][:name], source[director_index][:movies])
+    director_index += 1
   end
-  movie
+  movie_array
 end
   # GOAL: For each director, find their:movies Array and stick it in a new Array
   #
