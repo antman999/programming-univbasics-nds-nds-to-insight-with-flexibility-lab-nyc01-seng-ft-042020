@@ -33,11 +33,11 @@ end
 
 # Your code after this point
 
-def movies_with_director_key(name, movies_collection)
-  collection_index = 0
+def movies_with_director_key(name, movies)
+  collection = 0
   array_of_movies = []
-  while collection_index < movies_collection.length do
-    array_of_movies << movie_with_director_name(name, movies_collection[collection_index])
+  while collection < movies.length do
+    array_of_movies << movie_with_director_name(name, movies[collection_index])
     collection_index += 1
   end
   array_of_movies
