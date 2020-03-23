@@ -62,17 +62,23 @@ return array
 
 
 def gross_per_studio(collection)
-  hash = {}
-  array = 0 
-   while array < collection.length do
-   studio_name = collection[array][:studio]
-    if hash[studio_name]
-      hash[studio_name] += collection[array][:worldwide_gross]
-    else hash[studio_name]= collection[array][:studio]
-      array+=1
+
+  movie_index = 0
+  studio_totals = {}
+  
+  
+  while movie_index < collection.length do
+    studio_name = collection[movie_index][:studio]
+    if studio_totals[studio_name]
+      studio_totals[studio_name] += collection[movie_index][:worldwide_gross]
+    else
+      studio_totals[studio_name] = collection[movie_index][:worldwide_gross]
+    end
+    movie_index += 1
   end
-  hash
-  end
+  
+  studio_totals
+  
 end
  
   
