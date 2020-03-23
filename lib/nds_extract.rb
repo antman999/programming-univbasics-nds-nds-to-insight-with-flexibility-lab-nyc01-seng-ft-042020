@@ -92,7 +92,7 @@ end
 
 
 def movies_with_directors_set(source)
-  director_index = 0
+   director_index = 0
   movie_array = []
   while director_index < source.length do
     movie_array << movies_with_director_key(source[director_index][:name], source[director_index][:movies])
